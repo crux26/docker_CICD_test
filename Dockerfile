@@ -44,4 +44,5 @@ COPY . .
 # Run the application.
 # CMD python -m uvicorn test:test --host=0.0.0.0 --port=8000
 # "$docker run -it image_name" will run the command below and wait for the user to type in the terminal
-CMD ["bash", "-c", "python test.py && exec bash"]
+# CMD ["bash", "-c", "python test.py && exec bash"]
+ENTRYPOINT ["bash", "-c", "python test.py && exec bash"]
