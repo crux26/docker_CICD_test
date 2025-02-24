@@ -3,6 +3,8 @@
 When you're ready, start your application by running:
 `docker compose up --build`.
 
+=> only when I need compose multiple containers (e.g. web engine, db, ...)
+
 Your application will be available at http://localhost:8000.
 
 ### Deploying your application to the cloud
