@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 ARG PYTHON_VERSION=3.10.9
-FROM python:${PYTHON_VERSION}-slim as base
+FROM python:${PYTHON_VERSION}-slim AS base
 
 # Prevents Python from writing pyc files.
 # -> host will create bytecode when the source file runs -> may take some time to "warm-up"
@@ -43,4 +43,5 @@ COPY . .
 
 # Run the application.
 # CMD python -m uvicorn test:test --host=0.0.0.0 --port=8000
-CMD ["python", "test.py", "bash"]
+# "$docker run -it image_name" will run the command below and wait for the user to type in the terminal
+CMD ["bash", "-c", "python test.py && exec bash"]
